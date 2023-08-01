@@ -5,10 +5,11 @@ import GeorgeImage from "public/george.png";
 import { Terminal } from 'primereact/terminal';
 
 import { TerminalService } from 'primereact/terminalservice';
-
+import { useRouter } from 'next/router';
 import {useEffect, useState } from 'react'; 
 
 const TerminalDemo = () => {
+  const router = useRouter();
 
   const [georgeUp, setGeorgeUp] = useState(false);
   const [help, setHelp] = useState(false);
@@ -42,13 +43,15 @@ const TerminalDemo = () => {
               <p>
                 Commands: <br />
                 <span className="text-green-400">about</span> - who am i?<br />
+                <span className="text-green-400">projects</span> - view list of projects<br />
                 <span className="text-green-400">clear</span> - clear output<br />
               </p>;
         break;
 
       case 'about':
         response = 
-              <p>
+              <div>
+              <br />
                 <span className="text-green-400">Cameron Lee</span>
                 <p>(Programmer / Scientist)</p> <br />
 
@@ -60,11 +63,17 @@ const TerminalDemo = () => {
                 <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="underline">LinkedIn</Link><br /><br />
                 <span className="text-green-400">Education: </span>
                 &nbsp;&nbsp;<p>Computer Science B.S - Seattle University</p> <br />
-              </p>;
+              </div>;
         break;
 
+      case 'projects':
+        response = "To projects";
+        router.push('/projects').catch(err => console.log(err));
+        break;
+        
+
       default:
-        response = 'Unknown command: ' + command;
+        response = 'Unknown command: ' + command + '. Type "help" for a list of commands.';
         break;
     }
 
@@ -85,7 +94,7 @@ const TerminalDemo = () => {
       });
 
   return (
-      <div className="bg-slate-950 text-white p-4 rounded-2xl font-mono w-screen/2">
+      <div className="bg-slate-950 text-white p-4 rounded-2xl font-mono">
       {georgeUp && <img src={GeorgeImage.src} alt={"CG"} className="bg-transparent w-32" />}
       <Terminal 
       className="[&_.p-terminal-input]:bg-transparent
@@ -95,6 +104,8 @@ const TerminalDemo = () => {
       </div>
       );
 }
+
+
 export default function Home() {
   return (
     <>
