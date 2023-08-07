@@ -2,45 +2,30 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from "next"
 import Link from "next/link"
 
 import { useRouter } from 'next/router';
+import { env } from "~/env.mjs";
+import {Client, IPinnedItem} from "../components/gh-pins"
 
 const username = 'cameronslee'
 
-interface Repo {
-  id: number;
-  name: string;
-  description: string;
-  stars: number;
-  language: string;
-  forks: number;
-  html_url: string;
-  homepage: string;
-
-  [Symbol.iterator](): IterableIterator<Repo>;
-
+export const getServerSideProps: GetServerSideProps = async () => { 
+  Client.init(env.GITHUB_ACCESS_TOKEN);
+  const repo = await Client.getPins().then((res: IPinnedItem[]) => {
+    return res
+  });
+  return repo ? { props: { repo } } : { props: {} };
 }
 
-export const getServerSideProps: GetServerSideProps<{
-  repo: Repo
-}> = async () => {
-  const res = await fetch(`https://api.github.com/users/${username}/repos?page=1&per_page=100`)
-  const repo = await res.json() as unknown as Repo
-  return { props: { repo } }
-}
-
-const RepoCard = (repo: Repo) => {
+const RepoCard = (repo: IPinnedItem) => {
   return (
     <div className="flex flex-col items-center justify-center gap-4 m-2.5 font-mono">
       <div className="w-full max-w-sm overflow-hidden rounded-lg bg-green-600 shadow-md duration-300 hover:scale-105 hover:shadow-xl p-4 space-x-4 space-y-4">
         <h1 className="font-extrabold font-mono tracking-tight text-white text-xl">
           <Link target='_blank' className="hover:text-slate-800" href={
-            repo.homepage ? repo.homepage : repo.html_url
+            repo.homepageUrl ? repo.homepageUrl : repo.url
           }>{repo.name}</Link>
         </h1>
         <div className="text-white bg-gradient-to-b border-white">
             {repo.description}
-        </div>
-        <div className="text-white bg-gradient-to-b border-white">
-            {repo.language}
         </div>
       </div>
     </div>
@@ -48,9 +33,6 @@ const RepoCard = (repo: Repo) => {
 }
 
 export default function ProjectsView ({repo}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  
-  console.log(repo)
-
   const router = useRouter()
   function handleBack() {
     router.push('/').catch(err => console.log(err));
@@ -72,7 +54,7 @@ export default function ProjectsView ({repo}: InferGetServerSidePropsType<typeof
             </div>
           </div>
         </div>
-        <button onClick={() => handleBack()}  className="text-white w-10 rounded bg-gradient-to-b hover:text-white/80">
+        <button onClick={() => handleBack()}  className="font-mono text-white w-10 rounded bg-gradient-to-b hover:text-white/80">
         Back
         </button>
       </div>
