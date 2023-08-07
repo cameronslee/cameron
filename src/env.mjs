@@ -8,7 +8,7 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    GITHUB_ACCESS_TOKEN: z.string().min(1),
+    GITHUB_ACCESS_TOKEN: z.string(),
   },
 
   /**
@@ -18,6 +18,7 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+
   },
 
   /**
