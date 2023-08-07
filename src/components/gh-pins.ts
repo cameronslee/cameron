@@ -1,5 +1,7 @@
 import { gql, GraphQLClient } from "graphql-request";
 
+export const username = "cameronslee"
+
 export interface IPinnedItem {
   name: string;
   id: string;
@@ -26,7 +28,7 @@ export class Client {
     }
     const query = gql`
     {
-      user(login: "cameronslee") {
+      user(login: "${username}") {
         pinnedItems(first: 6) {
           nodes {
             ... on Repository {
