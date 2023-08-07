@@ -9,7 +9,7 @@ const username = 'cameronslee'
 
 export const getServerSideProps: GetServerSideProps = async () => { 
   Client.init(env.GITHUB_ACCESS_TOKEN);
-  const repo = await Client.getPins().then((res: IPinnedItem[]) => {
+  const repo : IPinnedItem[] = await Client.getPins().then((res: IPinnedItem[]) => {
     return res
   });
   return repo ? { props: { repo } } : { props: {} };
@@ -32,7 +32,11 @@ const RepoCard = (repo: IPinnedItem) => {
   )
 }
 
-export default function ProjectsView ({repo}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+interface IProps {
+  repo: IPinnedItem[]
+}
+
+export default function ProjectsView ({repo}: IProps) {
   const router = useRouter()
   function handleBack() {
     router.push('/').catch(err => console.log(err));
@@ -45,7 +49,7 @@ export default function ProjectsView ({repo}: InferGetServerSidePropsType<typeof
             <Link target='_blank' className="hover:text-white/80" href={`https://github.com/${username}`}>@{username}</Link>
           </h1>
           <div className="text-white">
-          {[...repo].map((repo) => (
+          {[...repo].map((repo: IPinnedItem) => (
             <RepoCard {...repo} key={repo.id}/>
           ))}
           </div>

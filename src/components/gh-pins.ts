@@ -19,7 +19,6 @@ export class Client {
   static init(token: string) {
     this.token = token;
 		this.client.setHeader("Authorization", `Bearer ${token}`);
-    console.log(token)
 	}
 
   static async getPins() {
@@ -47,7 +46,15 @@ export class Client {
     }
   `;
 
-    const res: any = await this.client.request(query);
+  interface IResponse {
+    user: {
+      pinnedItems: {
+        nodes: IPinnedItem[];
+      }
+    }
+  }
+
+    const res: IResponse = await this.client.request(query);
 
     const repos: IPinnedItem[] = res.user.pinnedItems.nodes;
     return repos;
