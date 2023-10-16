@@ -59,11 +59,10 @@ export default function Home({
           <div>
             <br />
             <span className="text-green-400">Cameron Lee</span>
-            <p>(Programmer / Scientist)</p> <br />
+            <p>(Computer Scientist)</p> <br />
 
             <span className="text-green-400">About: </span>
             <p> Curious and passionate about technology <br /> with a strong foundation in Computer Science</p> <br />
-            <p> Interested in web technologies and  <br/> deep learning</p> <br />
 
             <span className="text-green-400">Links: </span> <br />
             <Link href={"https://github.com/cameronslee"} target="_blank" className="underline">Github</Link><br />
