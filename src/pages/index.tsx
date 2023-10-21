@@ -26,7 +26,7 @@ const RepoCard = (repo: IPinnedItem) => {
         <div className="flex flex-col items-center justify-center gap-4 m-2.5 font-mono">
           <div className="w-full max-w-sm overflow-hidden rounded-lg bg-zinc-800 shadow-md duration-300 hover:scale-105 hover:shadow-xl p-4 space-x-4 space-y-4">
             <h1 className="font-extrabold font-mono tracking-tight text-white text-sm">
-              <Link target='_blank' className="hover:text-sky-600" href={
+              <Link target='_blank' className="hover:text-fuchsia-500" href={
                 repo.homepageUrl ? repo.homepageUrl : repo.url
               }>{repo.name}</Link>
             </h1>
@@ -58,7 +58,7 @@ export default function Home({
           </h1>
           <div>
             <br />
-            <span className="text-sky-400">Cameron Lee</span>
+            <span className="text-sky-600">Cameron Lee</span>
             <p>(Programmer)</p> <br />
 
             <span className="text-sky-600">About: </span>
