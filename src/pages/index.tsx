@@ -26,7 +26,7 @@ const RepoCard = (repo: IPinnedItem) => {
         <div className="flex flex-col items-center justify-center gap-4 m-2.5 font-mono">
           <div className="w-full max-w-sm overflow-hidden rounded-lg bg-zinc-800 shadow-md duration-300 hover:scale-105 hover:shadow-xl p-4 space-x-4 space-y-4">
             <h1 className="font-extrabold font-mono tracking-tight text-white text-sm">
-              <Link target='_blank' className="hover:text-green-400" href={
+              <Link target='_blank' className="hover:text-sky-600" href={
                 repo.homepageUrl ? repo.homepageUrl : repo.url
               }>{repo.name}</Link>
             </h1>
@@ -58,18 +58,18 @@ export default function Home({
           </h1>
           <div>
             <br />
-            <span className="text-green-400">Cameron Lee</span>
+            <span className="text-sky-400">Cameron Lee</span>
             <p>(Programmer)</p> <br />
 
-            <span className="text-green-400">About: </span>
+            <span className="text-sky-600">About: </span>
             <p> Curious and passionate about technology <br /> with a strong foundation in Computer Science</p> <br />
 
-            <span className="text-green-400">Links: </span> <br />
+            <span className="text-sky-600">Links: </span> <br />
             <Link href={"https://github.com/cameronslee"} target="_blank" className="underline">Github</Link><br />
             <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="underline">LinkedIn</Link><br /><br />
-            <span className="text-green-400">Education: </span>
+            <span className="text-sky-600">Education: </span>
             &nbsp;&nbsp;<p>Computer Science B.S - Seattle University</p> <br />
-            <span className="text-green-400">Notable Projects: </span>
+            <span className="text-sky-600">Notable Projects: </span>
             {repo.map((repo) => (
               <RepoCard {...repo} key={repo.id} />
             ))}
