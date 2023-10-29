@@ -63,7 +63,7 @@ export default function Home({
 
             <span className="text-sky-600">About: </span>
             <p> Curious and passionate about technology <br /> with a strong foundation in Computer Science</p> <br />
-            <p> Currently interested in low level programing and <br /> developing software free of unnecessary abstractions </p> <br />
+            <p> Currently interested in low level programming and <br /> developing software free of unnecessary abstractions </p> <br />
 
             <span className="text-sky-600">Links: </span> <br />
             <Link href={"https://github.com/cameronslee"} target="_blank" className="underline">Github</Link><br />
