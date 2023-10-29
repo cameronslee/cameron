@@ -59,7 +59,7 @@ export default function Home({
           <div>
             <br />
             <span className="text-sky-600">Cameron Lee</span>
-            <p>( Programmer )</p> <br />
+            <p>(Programmer)</p> <br />
 
             <span className="text-sky-600">About: </span>
             <p> Curious and passionate about technology <br /> with a strong foundation in Computer Science</p> <br />
