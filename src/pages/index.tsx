@@ -64,9 +64,9 @@ export default function Home({
             <span className="text-sky-600">About: </span>
             <p> Curious and passionate about technology <br /> with a strong foundation in Computer Science</p> <br />
             <p> Currently interested in:
-            <br/> compilers
-            <br/> low level programming 
-            <br/> developing software free of unnecessary abstractions </p> 
+            <br/> - compilers
+            <br/> - low level programming 
+            <br/> - developing software free of unnecessary abstractions </p> 
             <br />
 
             <span className="text-sky-600">Links: </span> <br />
