@@ -63,9 +63,9 @@ export default function Home({
 
             <span className="text-sky-600">About: </span>
             <p> 
-            - Curious and Persistent
+            - Curious and Dilligent
             <br/>
-            - Interested in compilers, programming language design and systems 
+            - Interested in compilers and operating systems
             </p>
             <br />
 
