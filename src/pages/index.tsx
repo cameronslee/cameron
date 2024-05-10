@@ -25,7 +25,7 @@ const RepoCard = (repo: IPinnedItem) => {
         <div className="flex flex-col items-center justify-center gap-4 m-2.5 font-mono">
           <div className="w-full max-w-sm overflow-hidden rounded-lg bg-zinc-800 shadow-md duration-300 hover:scale-105 hover:shadow-xl p-4 space-x-4 space-y-4">
             <h1 className="font-extrabold font-mono tracking-tight text-white text-sm">
-              <Link target='_blank' className="hover:text-emerald-400" href={
+              <Link target='_blank' className="text-emerald-400 hover:text-rose-400" href={
                 repo.homepageUrl ? repo.homepageUrl : repo.url
               }>{repo.name}</Link>
             </h1>
@@ -57,14 +57,14 @@ export default function Home({
           <div>
             <br />
             <span className="text-violet-400">Cameron Lee</span>
-            <p>(Computer Programmer)</p> <br />
+            <p className="text-rose-400">(Computer Programmer)</p> <br />
 
             <span className="text-violet-400">Links: </span> <br />
-            <Link href={"https://cameronslee.github.io/blog/"} target="_blank" className="underline">Blog</Link><br />
-            <Link href={"https://github.com/cameronslee"} target="_blank" className="underline">Github</Link><br />
-            <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="underline">LinkedIn</Link><br /><br />
+            <Link className="text-rose-400" href={"https://cameronslee.github.io/blog/"} target="_blank" className="underline">Blog</Link><br />
+            <Link className="text-rose-400" href={"https://github.com/cameronslee"} target="_blank" className="underline">Github</Link><br />
+            <Link className="text-rose-400" href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="underline">LinkedIn</Link><br /><br />
             <span className="text-violet-400">Education: </span>
-            &nbsp;&nbsp;<p>Computer Science B.S - Seattle University</p> <br />
+            &nbsp;&nbsp;<p className="text-rose-400">Computer Science B.S - Seattle University</p> <br />
             <span className="text-violet-400">Notable Projects: </span>
             {repo.map((repo) => (
               <RepoCard {...repo} key={repo.id} />
