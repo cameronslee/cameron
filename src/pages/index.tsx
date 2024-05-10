@@ -57,7 +57,7 @@ export default function Home({
           <div>
             <br />
             <span className="text-violet-400">Cameron Lee</span>
-            <p className="text-emerald-400 hover:text-rose-400">(Computer Programmer)</p> <br />
+            <p className="text-emerald-400">(Computer Programmer)</p> <br />
 
             <span className="text-violet-400">Links: </span> <br />
             <Link href={"https://cameronslee.github.io/blog/"} target="_blank" className="text-emerald-400 hover:text-rose-400 underline">Blog</Link><br />
