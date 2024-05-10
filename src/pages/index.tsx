@@ -64,7 +64,7 @@ export default function Home({
             <Link href={"https://github.com/cameronslee"} target="_blank" className="text-emerald-400 hover:text-rose-400 underline">Github</Link><br />
             <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="text-emerald-400 hover:text-rose-400 underline">LinkedIn</Link><br /><br />
             <span className="text-violet-400">Education: </span>
-            &nbsp;&nbsp;<p className="text-rose-400">Computer Science B.S - Seattle University</p> <br />
+            &nbsp;&nbsp;<p className="text-emerald-400 hover:text-rose-400">Computer Science B.S - Seattle University</p> <br />
             <span className="text-violet-400">Notable Projects: </span>
             {repo.map((repo) => (
               <RepoCard {...repo} key={repo.id} />
