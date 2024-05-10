@@ -60,9 +60,9 @@ export default function Home({
             <p className="text-white">(software engineer)</p> <br />
 
             <span className="text-violet-400">links: </span> <br />
-            <Link href={"https://cameronslee.github.io/blog/"} target="_blank" className="text-white hover:text-rose-400 hover:underline">blog</Link><br />
-            <Link href={"https://github.com/cameronslee"} target="_blank" className="text-white hover:text-rose-400 hover:underline">github</Link><br />
-            <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="text-white hover:text-rose-400 hover:underline">linkedin</Link><br /><br />
+            <Link href={"https://cameronslee.github.io/blog/"} target="_blank" className="text-white hover:text-rose-400 hover:underline"> blog</Link><br />
+            <Link href={"https://github.com/cameronslee"} target="_blank" className="text-white hover:text-rose-400 hover:underline"> github</Link><br />
+            <Link href={"https://www.linkedin.com/in/cameronseilee/"} target="_blank" className="text-white hover:text-rose-400 hover:underline"> linkedin</Link><br /><br />
             <span className="text-violet-400">work: </span>
             {repo.map((repo) => (
               <RepoCard {...repo} key={repo.id} />
